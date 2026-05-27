@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movers in Southwest Michigan & Northern Indiana | Elite Haulerz Moving</title>
+    <meta name="description" content="Locally owned movers serving Berrien County MI, South Bend IN, and surrounding areas since 2015. Flat hourly rates, fully insured. Free quote in minutes: (269) 240-3518.">
+    <style>
+        /* ---------- Tokens ---------- */
+        :root {
+            /* Starbucks-inspired palette */
+            --navy: #1E3932;       /* dark forest (was navy)            */
+            --navy-2: #2A4E42;     /* lighter forest                    */
+            --red: #00704A;        /* Starbucks house green (primary CTA) */
+            --red-2: #00563B;      /* darker green for hover            */
+            --gold: #F2F0EB;       /* cream highlight (no gold accent)  */
+            --ink: #1E3932;        /* body text in dark forest          */
+            --muted: #6B7572;      /* warm neutral gray                 */
+            --line: #E4E1D6;       /* soft cream border                 */
+            --bg: #ffffff;
+            --bg-alt: #F2F0EB;     /* Starbucks cream                   */
+            --bg-deep: #1E3932;    /* deep forest                       */
+            --shadow: 0 10px 30px rgba(30, 57, 50, 0.10);
+            --radius: 14px;
+        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: var(--navy); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+        .eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; font-size: 13px; color: var(--red); }
+        h1, h2, h3 { font-weight: 800; letter-spacing: -0.01em; line-height: 1.15; margin: 0 0 16px; color: var(--navy); }
+        h1 { font-size: clamp(36px, 5vw, 56px); }
+        h2 { font-size: clamp(28px, 3.4vw, 40px); }
+        h3 { font-size: 20px; }
+        p { margin: 0 0 14px; }
+        .lede { font-size: 18px; color: var(--muted); }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 14px 22px; border-radius: 999px; font-weight: 700;
+            transition: transform .08s ease, box-shadow .15s ease, background .15s;
+            border: 0; cursor: pointer; font-size: 16px;
+        }
+        .btn-primary { background: var(--red); color: #fff; box-shadow: 0 8px 20px rgba(0, 112, 74, .25); }
+        .btn-primary:hover { background: var(--red-2); text-decoration: none; transform: translateY(-1px); }
+        .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.4); }
+        .btn-ghost:hover { background: rgba(255,255,255,.1); text-decoration: none; }
+        .btn-dark { background: var(--navy); color: #fff; }
+        .btn-dark:hover { background: var(--navy-2); text-decoration: none; }
+
+        /* ---------- Top bar ---------- */
+        .topbar { background: var(--bg-deep); color: #d6dbd2; font-size: 14px; }
+        .topbar .row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; gap: 16px; flex-wrap: wrap; }
+        .topbar a { color: #fff; }
+        .topbar .pill { background: var(--red); color: #fff; padding: 4px 10px; border-radius: 999px; font-weight: 700; font-size: 12px; letter-spacing: .04em; }
+
+        /* ---------- Header ---------- */
+        header.site { position: sticky; top: 0; background: #fff; z-index: 50; border-bottom: 1px solid var(--line); }
+        header.site .row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 24px; }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 22px; color: var(--navy); letter-spacing: -0.02em; }
+        .logo-mark { width: 40px; height: 40px; background: var(--navy); color: #fff; border-radius: 8px; display: grid; place-items: center; font-weight: 900; }
+        nav.primary ul { list-style: none; display: flex; gap: 22px; padding: 0; margin: 0; }
+        nav.primary a { color: var(--ink); font-weight: 600; font-size: 15px; }
+        nav.primary a:hover { color: var(--red); text-decoration: none; }
+        .header-cta { display: flex; align-items: center; gap: 12px; }
+        .phone-link { color: var(--navy); font-weight: 800; font-size: 16px; }
+        @media (max-width: 900px) { nav.primary { display: none; } }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            background:
+                    linear-gradient(135deg, rgba(18, 37, 34, 0.92), rgba(30, 57, 50, 0.82)),
+                    radial-gradient(circle at 20% 30%, #2A4E42, #122522 70%);
+            color: #fff;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: ""; position: absolute; right: -10%; top: -20%; width: 60%; height: 140%;
+            background: radial-gradient(closest-side, rgba(0, 112, 74, 0.35), transparent 70%);
+            pointer-events: none;
+        }
+        .hero .row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; padding: 64px 0 80px; align-items: center; position: relative; z-index: 1; }
+        @media (max-width: 900px) { .hero .row { grid-template-columns: 1fr; padding: 40px 0 56px; } }
+        .hero h1 { color: #fff; }
+        .hero h1 strong { color: var(--gold); }
+        .hero .sub { font-size: 19px; color: #d6ebe1; margin-bottom: 20px; max-width: 540px; }
+        .hero-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; max-width: 520px; }
+        .hero-bullets li { color: #fff; font-weight: 600; font-size: 15px; padding-left: 24px; position: relative; }
+        .hero-bullets li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 900; }
+        .hero-cta-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+        /* ---------- Quote card ---------- */
+        .quote-card {
+            background: #fff; color: var(--ink);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,.4);
+        }
+        .quote-card h3 { color: var(--navy); margin-bottom: 4px; font-size: 22px; }
+        .quote-card .desc { color: var(--muted); margin-bottom: 18px; font-size: 14px; }
+        .field { display: block; margin-bottom: 14px; }
+        .field label { display: block; font-weight: 700; font-size: 13px; color: var(--navy); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .04em; }
+        .field input, .field select {
+            width: 100%; padding: 12px 14px; font-size: 15px; border-radius: 10px;
+            border: 1.5px solid var(--line); background: #fff; color: var(--ink);
+            font-family: inherit;
+        }
+        .field input:focus, .field select:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px rgba(0,112,74,.15); }
+        .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .quote-card .submit { width: 100%; margin-top: 6px; padding: 16px; font-size: 17px; }
+        .quote-card .or { text-align: center; margin-top: 14px; font-size: 14px; color: var(--muted); }
+        .quote-card .or a { color: var(--navy); font-weight: 700; }
+
+        /* ---------- Trust strip ---------- */
+        .trust { background: #fff; border-bottom: 1px solid var(--line); }
+        .trust .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 28px 0; align-items: center; }
+        @media (max-width: 800px) { .trust .grid { grid-template-columns: repeat(2, 1fr); } }
+        .trust-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+        .trust-item .stars { color: var(--red); font-size: 18px; letter-spacing: 2px; }
+        .trust-item .score { font-weight: 800; color: var(--navy); font-size: 18px; }
+        .trust-item .src { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 700; }
+
+        /* ---------- Sections ---------- */
+        section { padding: 72px 0; }
+        section.alt { background: var(--bg-alt); }
+        .section-head { text-align: center; max-width: 760px; margin: 0 auto 40px; }
+        .section-head .eyebrow { display: inline-block; margin-bottom: 10px; }
+        .section-head p { color: var(--muted); font-size: 18px; }
+
+        /* ---------- Services grid ---------- */
+        .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        @media (max-width: 900px) { .services { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .services { grid-template-columns: 1fr; } }
+        .svc-card {
+            background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+            padding: 28px; transition: transform .15s ease, box-shadow .15s ease, border-color .15s;
+            text-align: left;
+        }
+        .svc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(0,112,74,.3); }
+        .svc-icon {
+            width: 56px; height: 56px; border-radius: 14px; background: var(--bg-alt);
+            display: grid; place-items: center; margin-bottom: 18px; font-size: 26px;
+            border: 1px solid var(--line);
+        }
+        .svc-card h3 { margin-bottom: 8px; }
+        .svc-card p { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
+        .svc-card .more { color: var(--red); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .04em; }
+
+        /* ---------- Flat fee section ---------- */
+        .flatfee { background: linear-gradient(180deg, var(--bg-alt), #fff); }
+        .flatfee .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+        @media (max-width: 900px) { .flatfee .wrap { grid-template-columns: 1fr; } }
+        .flatfee-list { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+        .flatfee-group { padding: 16px 0; border-bottom: 1px solid var(--line); }
+        .flatfee-group:last-child { border-bottom: 0; }
+        .flatfee-group h4 { margin: 0 0 8px; font-size: 16px; color: var(--navy); }
+        .flatfee-group ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 14px; }
+        .flatfee-group ul li { margin-bottom: 4px; }
+
+        /* ---------- Service area ---------- */
+        .area { background: var(--bg-deep); color: #fff; }
+        .area h2 { color: #fff; }
+        .area .lede { color: #d6dbd2; }
+        .city-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 28px; }
+        @media (max-width: 900px) { .city-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 600px) { .city-grid { grid-template-columns: repeat(2, 1fr); } }
+        .city {
+            background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+            color: #fff; padding: 12px 14px; border-radius: 10px; font-weight: 600; font-size: 14px;
+            text-align: center; transition: background .15s, border-color .15s;
+        }
+        .city:hover { background: rgba(255,255,255,.12); border-color: var(--gold); text-decoration: none; }
+
+        /* ---------- How it works ---------- */
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
+        .step { text-align: center; padding: 24px; }
+        .step-num {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--red); color: #fff; font-weight: 900; font-size: 22px;
+            display: grid; place-items: center; margin: 0 auto 16px;
+        }
+
+        /* ---------- Reviews ---------- */
+        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        @media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr; } }
+        .review {
+            background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+            padding: 28px; box-shadow: var(--shadow);
+        }
+        .review .stars { color: var(--red); font-size: 18px; letter-spacing: 2px; margin-bottom: 10px; }
+        .review p { color: var(--ink); font-size: 15px; }
+        .review .meta { color: var(--muted); font-size: 13px; margin-top: 14px; font-weight: 700; }
+
+        /* ---------- Community / mission strip ---------- */
+        .mission { background: linear-gradient(135deg, var(--navy), #122522); color: #fff; padding: 56px 0; }
+        .mission h2 { color: #fff; max-width: 760px; }
+        .mission p { color: #d6dbd2; max-width: 720px; }
+
+        /* ---------- Final CTA ---------- */
+        .final-cta { background: var(--red); color: #fff; padding: 64px 0; text-align: center; }
+        .final-cta h2 { color: #fff; }
+        .final-cta p { color: #d6ebe1; font-size: 18px; max-width: 640px; margin: 0 auto 22px; }
+        .final-cta .btn { background: #fff; color: var(--red); }
+        .final-cta .btn:hover { background: var(--bg-alt); }
+        .final-cta .phone { color: #fff; font-weight: 800; margin-left: 18px; font-size: 18px; }
+
+        /* ---------- Footer ---------- */
+        footer.site { background: #122522; color: #d6dbd2; padding: 48px 0 28px; }
+        footer.site .grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+        @media (max-width: 800px) { footer.site .grid { grid-template-columns: 1fr 1fr; } }
+        footer.site h4 { color: #fff; margin: 0 0 14px; font-size: 14px; text-transform: uppercase; letter-spacing: .08em; }
+        footer.site a { color: #d6dbd2; font-size: 14px; display: block; padding: 4px 0; }
+        footer.site a:hover { color: #fff; }
+        footer.site .small { font-size: 13px; color: #9aa093; border-top: 1px solid #234039; padding-top: 18px; margin-top: 32px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+        /* ---------- Sticky mobile CTA ---------- */
+        .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: #fff; border-top: 1px solid var(--line); padding: 10px; gap: 10px; box-shadow: 0 -10px 30px rgba(0,0,0,.12); }
+        .mobile-cta .btn { flex: 1; padding: 12px; }
+        @media (max-width: 700px) { .mobile-cta { display: flex; } body { padding-bottom: 76px; } }
+
+    </style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+    <div class="container row">
+        <div><span class="pill">FREE QUOTE</span>&nbsp;&nbsp;Open 8 AM – 8 PM &nbsp;·&nbsp; Locally owned since 2015</div>
+        <div><a href="tel:2692403518">📞 (269) 240-3518</a></div>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="site">
+    <div class="container row">
+        <a href="/" class="logo"><span class="logo-mark">EH</span> Elite Haulerz</a>
+        <nav class="primary">
+            <ul>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/locations/">Service Area</a></li>
+                <li><a href="/gallery/">Gallery</a></li>
+                <li><a href="/about-us/">About</a></li>
+                <li><a href="/faq/">FAQ</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a class="phone-link" href="tel:2692403518">(269) 240-3518</a>
+            <a class="btn btn-primary" href="#quote">Get Quote</a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container row">
+        <div>
+            <span class="eyebrow" style="color: var(--gold);">Southwest MI · Northern IN · Since 2015</span>
+            <h1 style="margin-top: 12px;">Stress-free movers in <strong>Southwest Michigan &amp; Northern Indiana</strong>.</h1>
+            <p class="sub">Locally owned, fully insured, flat hourly rates with no hidden fees. We move studios to 5-bedroom homes, offices, and specialty items within a 200-mile radius of Berrien Springs.</p>
+            <ul class="hero-bullets">
+                <li>Flat hourly rates</li>
+                <li>Quotes from $295</li>
+                <li>FMCSA &amp; MDOT registered</li>
+                <li>Fully licensed &amp; insured</li>
+                <li>Free estimate in minutes</li>
+                <li>Open 8 AM – 8 PM</li>
+            </ul>
+            <div class="hero-cta-row">
+                <a class="btn btn-primary" href="#quote">Get My Free Quote</a>
+                <a class="btn btn-ghost" href="tel:2692403518">📞 (269) 240-3518</a>
+            </div>
+        </div>
+
+        <!-- Quote form card (mirrors the multi-field qualifying form) -->
+        <form class="quote-card" id="quote" onsubmit="event.preventDefault(); alert('Form wired up by your developer — submit to your CRM/email.');">
+            <h3>Get a free quote in minutes</h3>
+            <p class="desc">Tell us about your move. We'll text or email a flat-rate quote the same day.</p>
+
+            <div class="field-row">
+                <div class="field">
+                    <label for="date">Move date</label>
+                    <input id="date" type="date" required />
+                </div>
+                <div class="field">
+                    <label for="type">Type of move</label>
+                    <select id="type" required>
+                        <option value="">Choose…</option>
+                        <option>Residential — apartment</option>
+                        <option>Residential — house</option>
+                        <option>Office / commercial</option>
+                        <option>Specialty item only (piano, safe, etc.)</option>
+                        <option>Long distance</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="size">Size of move</label>
+                <select id="size" required>
+                    <option value="">Choose…</option>
+                    <option>Studio</option>
+                    <option>1 bedroom</option>
+                    <option>2 bedroom</option>
+                    <option>3 bedroom</option>
+                    <option>4+ bedroom</option>
+                    <option>Office</option>
+                    <option>Specialty / single item</option>
+                </select>
+            </div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label for="from">Moving from (ZIP)</label>
+                    <input id="from" type="text" inputmode="numeric" maxlength="5" placeholder="49103" required />
+                </div>
+                <div class="field">
+                    <label for="to">Moving to (ZIP)</label>
+                    <input id="to" type="text" inputmode="numeric" maxlength="5" placeholder="46601" required />
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label for="name">Your name</label>
+                    <input id="name" type="text" required />
+                </div>
+                <div class="field">
+                    <label for="phone">Phone</label>
+                    <input id="phone" type="tel" inputmode="tel" placeholder="(269) 555-0100" required />
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" required />
+            </div>
+
+            <button class="btn btn-primary submit" type="submit">Get My Free Quote →</button>
+            <div class="or">Prefer to talk? <a href="tel:2692403518">Call (269) 240-3518</a></div>
+        </form>
+    </div>
+</section>
+
+<!-- Trust strip -->
+<section class="trust" style="padding: 0;">
+    <div class="container">
+        <div class="grid">
+            <div class="trust-item">
+                <div class="stars">★★★★★</div>
+                <div class="score">4.9 / 5</div>
+                <div class="src">Google · 120+ reviews</div>
+            </div>
+            <div class="trust-item">
+                <div class="stars">★★★★★</div>
+                <div class="score">5.0 / 5</div>
+                <div class="src">Yelp · Berrien Springs</div>
+            </div>
+            <div class="trust-item">
+                <div class="stars">★★★★★</div>
+                <div class="score">Licensed</div>
+                <div class="src">FMCSA · MDOT</div>
+            </div>
+            <div class="trust-item">
+                <div class="stars">★★★★★</div>
+                <div class="score">Insured</div>
+                <div class="src">Full coverage</div>
+            </div>
+        </div>
+        <p style="text-align:center;color:var(--muted);font-size:13px;padding:0 0 18px;margin:0;">Replace these numbers with your live review counts — connect a Google Reviews widget so they update automatically.</p>
+    </div>
+</section>
+
+<!-- Services grid -->
+<section class="alt">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Our Moving Services</span>
+            <h2>Whatever you need to move from point A to B, we'll get it there safely.</h2>
+            <p>Six core services for every kind of move in Southwest Michigan and Northern Indiana.</p>
+        </div>
+
+        <div class="services">
+            <a class="svc-card" href="/services/residential-moving/">
+                <div class="svc-icon">🏠</div>
+                <h3>Residential &amp; Local Moving</h3>
+                <p>Studios to 5-bedroom homes. Anywhere within 200 miles of Berrien Springs — fully wrapped, blanketed, and tracked.</p>
+                <span class="more">Learn more →</span>
+            </a>
+            <a class="svc-card" href="/services/long-distance-moving/">
+                <div class="svc-icon">🛣️</div>
+                <h3>Long-Distance Moving</h3>
+                <p>Cross-state moves between Southwest Michigan and Northern Indiana with timely delivery and transparent pricing — no hidden fees.</p>
+                <span class="more">Learn more →</span>
+            </a>
+            <a class="svc-card" href="/services/commercial-moving/">
+                <div class="svc-icon">🏢</div>
+                <h3>Office &amp; Commercial Moves</h3>
+                <p>Weekend, after-hours, and overnight moves to minimize downtime. Certificates of insurance available on request.</p>
+                <span class="more">Learn more →</span>
+            </a>
+            <a class="svc-card" href="/services/specialty-moving/">
+                <div class="svc-icon">🎹</div>
+                <h3>Specialty Moving</h3>
+                <p>Pianos, gun safes, pool tables, antiques, art, hot tubs, and oversized items. Right equipment, right team, every time.</p>
+                <span class="more">Learn more →</span>
+            </a>
+            <a class="svc-card" href="/services/packers-and-movers/">
+                <div class="svc-icon">📦</div>
+                <h3>Packing &amp; Unpacking</h3>
+                <p>Pack your whole home, a few boxes, or just your most valuable items. High-quality materials matched to each item.</p>
+                <span class="more">Learn more →</span>
+            </a>
+            <a class="svc-card" href="/services/last-minute-moves/">
+                <div class="svc-icon">⚡</div>
+                <h3>Last-Minute Moves</h3>
+                <p>Need to move this week? We keep slots open for urgent moves and emergency packing. Call us today.</p>
+                <span class="more">Learn more →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Flat-fee inclusions section -->
+<section class="flatfee">
+    <div class="container wrap">
+        <div>
+            <span class="eyebrow">Flat-rate pricing</span>
+            <h2 style="margin-top:10px;">Our flat hourly rates mean no hidden surprises, ever.</h2>
+            <p class="lede">Quotes start at $295. The price you're quoted is the price you pay — no franchise fees, no fuel surcharges, no "long-carry" fees. We include all of the following at no extra charge.</p>
+            <a class="btn btn-dark" href="#quote">Get my flat-rate quote</a>
+        </div>
+
+        <div class="flatfee-list">
+            <div class="flatfee-group">
+                <h4>Items we always wrap &amp; protect — free</h4>
+                <ul>
+                    <li>Smart &amp; flat-screen TVs — wrapped &amp; padded</li>
+                    <li>Mirrors &amp; framed art — protected &amp; boxed</li>
+                    <li>Lamps — packed with shades removed</li>
+                    <li>Computers &amp; electronics — wrapped &amp; cabled together</li>
+                </ul>
+            </div>
+            <div class="flatfee-group">
+                <h4>Furniture protection</h4>
+                <ul>
+                    <li>Mattresses — full plastic wrap</li>
+                    <li>Couches &amp; chairs — moving blankets &amp; tape</li>
+                    <li>Tables — disassembled &amp; blanket-wrapped</li>
+                    <li>Armoires &amp; dressers — double-wrapped</li>
+                </ul>
+            </div>
+            <div class="flatfee-group">
+                <h4>Care for your walls, floors &amp; doors</h4>
+                <ul>
+                    <li>Floor protection at pickup &amp; drop-off</li>
+                    <li>Corner guards on hallway turns</li>
+                    <li>Doorway padding to prevent scratches</li>
+                </ul>
+            </div>
+            <div class="flatfee-group">
+                <h4>No hidden extras</h4>
+                <ul>
+                    <li>Travel time within service area is included</li>
+                    <li>Fuel surcharge — never separate</li>
+                    <li>Standard mileage — included in your quote</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section>
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">How it works</span>
+            <h2>Three steps to a stress-free move.</h2>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>Tell us about your move</h3>
+                <p style="color:var(--muted);">Fill out the form or call (269) 240-3518. Takes 2 minutes.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>Get your flat-rate quote</h3>
+                <p style="color:var(--muted);">Same-day quote in writing. No hidden fees, no surprises on move day.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>We do the heavy lifting</h3>
+                <p style="color:var(--muted);">Clean-cut, uniformed movers arrive on time and treat your stuff like our own.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service area -->
+<section class="area">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow" style="color: var(--gold);">Service area</span>
+            <h2>Proudly serving Berrien County, MI and Northern Indiana.</h2>
+            <p class="lede">200-mile service radius from Berrien Springs. Click your city for a local quote:</p>
+        </div>
+        <div class="city-grid">
+            <a class="city" href="/locations/movers-st-joseph-mi/">St. Joseph, MI</a>
+            <a class="city" href="/locations/movers-benton-harbor-mi/">Benton Harbor, MI</a>
+            <a class="city" href="/locations/movers-niles-mi/">Niles, MI</a>
+            <a class="city" href="/locations/movers-stevensville-mi/">Stevensville, MI</a>
+            <a class="city" href="/locations/movers-bridgman-mi/">Bridgman, MI</a>
+            <a class="city" href="/locations/movers-new-buffalo-mi/">New Buffalo, MI</a>
+            <a class="city" href="/locations/movers-coloma-mi/">Coloma, MI</a>
+            <a class="city" href="/locations/movers-paw-paw-mi/">Paw Paw, MI</a>
+            <a class="city" href="/locations/movers-kalamazoo-mi/">Kalamazoo, MI</a>
+            <a class="city" href="/locations/movers-portage-mi/">Portage, MI</a>
+            <a class="city" href="/locations/movers-south-bend-in/">South Bend, IN</a>
+            <a class="city" href="/locations/movers-mishawaka-in/">Mishawaka, IN</a>
+            <a class="city" href="/locations/movers-granger-in/">Granger, IN</a>
+            <a class="city" href="/locations/movers-michigan-city-in/">Michigan City, IN</a>
+            <a class="city" href="/locations/movers-la-porte-in/">La Porte, IN</a>
+        </div>
+    </div>
+</section>
+
+<!-- Reviews -->
+<section class="alt">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">What customers say</span>
+            <h2>Southwest Michigan's highest-rated moving company.</h2>
+            <p>Replace these placeholders with real reviews — pull them straight from your Google Business Profile.</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>"From the quote to the last box, everything was easy. The team showed up early, wrapped everything carefully, and the price was exactly what they quoted me. I'd hire them again in a second."</p>
+                <div class="meta">— Sarah M., St. Joseph, MI</div>
+            </div>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>"Moved a 3-bedroom house from Niles to South Bend. Fast, careful with our furniture, and didn't nickel-and-dime us on tolls or fuel. Best moving experience we've ever had."</p>
+                <div class="meta">— David R., Niles, MI</div>
+            </div>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>"They moved my piano up two flights of stairs without a scratch. Real pros. The flat hourly rate made the whole thing predictable — no surprise charges."</p>
+                <div class="meta">— Janet K., South Bend, IN</div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top: 32px;">
+            <a class="btn btn-dark" href="https://www.yelp.com/biz/elite-haulerz-berrien-springs">Read all our reviews →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Mission / community -->
+<section class="mission">
+    <div class="container" style="display:grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center;">
+        <div>
+            <span class="eyebrow" style="color: var(--gold);">Locally owned. Locally invested.</span>
+            <h2 style="margin-top:10px;">We live here. Your move helps the community we both call home.</h2>
+            <p>Elite Haulerz is family-run, headquartered in Berrien Springs, and proud to support the towns and neighborhoods we serve. As a locally owned business, we skip franchise fees and pass the savings on to our customers — which is also how we hire and keep the best movers in the region.</p>
+        </div>
+        <div>
+            <a class="btn btn-primary" href="/about-us/">Meet our team</a>
+            <a class="btn btn-ghost" href="/gallery/" style="margin-left:10px;">See our work</a>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Ready for a stress-free move?</h2>
+        <p>Get your free flat-rate quote in under 2 minutes — or call now and talk to a real person.</p>
+        <a class="btn" href="#quote">Get My Free Quote</a>
+        <a class="phone" href="tel:2692403518">📞 (269) 240-3518</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site">
+    <div class="container">
+        <div class="grid">
+            <div>
+                <div class="logo" style="color:#fff;">
+                    <span class="logo-mark" style="background:#fff;color:var(--navy);">EH</span> Elite Haulerz
+                </div>
+                <p style="margin-top: 14px; color:#9aa093;">Locally owned movers serving Berrien County, MI, and Northern Indiana since 2015. Fully licensed &amp; insured. FMCSA &amp; MDOT registered.</p>
+                <p style="color:#9aa093;">📞 <a href="tel:2692403518" style="color:#fff;">(269) 240-3518</a><br>✉️ <a href="mailto:info@elitehaulerz.com" style="color:#fff;">info@elitehaulerz.com</a><br>🕒 Open 8 AM – 8 PM</p>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <a href="/services/residential-moving/">Residential</a>
+                <a href="/services/long-distance-moving/">Long-distance</a>
+                <a href="/services/commercial-moving/">Commercial</a>
+                <a href="/services/specialty-moving/">Specialty</a>
+                <a href="/services/packers-and-movers/">Packing</a>
+            </div>
+            <div>
+                <h4>Service Area</h4>
+                <a href="/locations/movers-st-joseph-mi/">St. Joseph, MI</a>
+                <a href="/locations/movers-south-bend-in/">South Bend, IN</a>
+                <a href="/locations/movers-benton-harbor-mi/">Benton Harbor, MI</a>
+                <a href="/locations/movers-niles-mi/">Niles, MI</a>
+                <a href="/locations/movers-mishawaka-in/">Mishawaka, IN</a>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <a href="/about-us/">About</a>
+                <a href="/gallery/">Gallery</a>
+                <a href="/faq/">FAQ</a>
+                <a href="/contact/">Contact</a>
+                <a href="/services/blog/">Blog</a>
+            </div>
+        </div>
+        <div class="small">
+            <span>© 2026 Elite Haulerz, LLC. All rights reserved.</span>
+            <span><a href="/privacy-policy/" style="color:#9aa093;">Privacy</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/EliteHaulerz" style="color:#9aa093;">Facebook</a> &nbsp;·&nbsp; <a href="https://twitter.com/elitehaulerz" style="color:#9aa093;">X</a></span>
+        </div>
+    </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="mobile-cta">
+    <a class="btn btn-dark" href="tel:2692403518">📞 Call</a>
+    <a class="btn btn-primary" href="#quote">Get Quote</a>
+</div>
+
+</body>
+</html>

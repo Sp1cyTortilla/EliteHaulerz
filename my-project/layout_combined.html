@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movers in Southwest Michigan & Northern Indiana | Elite Haulerz Moving</title>
+    <meta name="description" content="Locally owned movers serving Berrien County MI and Northern IN since 2015. Flat hourly rates, fully insured. Free quote in minutes: (269) 240-3518.">
+    <style>
+        /* ============ TOKENS ============ */
+        :root {
+            --green: #00704A;
+            --green-dk: #00563B;
+            --green-lt: #E8F2EE;
+            --forest: #1E3932;
+            --forest-dk: #122522;
+            --cream: #F2F0EB;
+            --cream-2: #E4E1D6;
+            --ink: #1E3932;
+            --muted: #6B7572;
+            --line: #E4E1D6;
+            --shadow: 0 12px 40px rgba(30,57,50,.10);
+            --shadow-lg: 0 24px 60px rgba(30,57,50,.14);
+            --radius: 18px;
+        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; background: var(--cream); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased;
+        }
+        .serif { font-family: Georgia, "Times New Roman", serif; }
+        img { max-width: 100%; display: block; }
+        a { color: var(--green); text-decoration: none; }
+        a:hover { color: var(--green-dk); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Eyebrow pill (Modern style) */
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--green-lt); color: var(--green);
+            padding: 6px 14px; border-radius: 999px;
+            font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .1em;
+        }
+        .eyebrow.on-dark { background: rgba(255,255,255,.12); color: var(--cream); }
+
+        /* Headlines with editorial italic accent */
+        h1, h2, h3, h4 { margin: 0 0 14px; color: var(--forest); letter-spacing: -0.02em; line-height: 1.1; }
+        h1 { font-size: clamp(42px, 5.6vw, 64px); font-family: Georgia, serif; font-weight: 400; }
+        h1 em { color: var(--green); font-style: italic; }
+        h2 { font-size: clamp(32px, 4vw, 46px); font-family: Georgia, serif; font-weight: 400; }
+        h2 em { color: var(--green); font-style: italic; }
+        h3 { font-size: 21px; font-weight: 800; }
+        h4 { font-size: 16px; font-weight: 800; }
+        p { margin: 0 0 14px; }
+        .lede { font-size: 18px; color: var(--muted); }
+        .rule { display: block; width: 60px; height: 3px; background: var(--green); margin: 14px 0 22px; }
+        .rule.center { margin-left: auto; margin-right: auto; }
+
+        /* ============ BUTTONS ============ */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 14px 22px; border-radius: 12px; font-weight: 700; border: 0;
+            cursor: pointer; font-size: 15px; transition: transform .08s, background .15s, color .15s, box-shadow .15s;
+            font-family: inherit;
+        }
+        .btn-primary { background: var(--green); color: #fff; box-shadow: 0 8px 24px rgba(0,112,74,.28); }
+        .btn-primary:hover { background: var(--green-dk); transform: translateY(-1px); color: #fff; }
+        .btn-light { background: #fff; color: var(--forest); border: 1.5px solid var(--line); }
+        .btn-light:hover { border-color: var(--green); color: var(--green); }
+        .btn-dark { background: var(--forest); color: #fff; }
+        .btn-dark:hover { background: var(--forest-dk); color: #fff; }
+        .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.4); }
+        .btn-ghost:hover { background: rgba(255,255,255,.1); color: #fff; }
+        .btn-outline { background: transparent; color: var(--forest); border: 2px solid var(--forest); }
+        .btn-outline:hover { background: var(--forest); color: #fff; }
+
+        /* ============ TOP BAR + PILL HEADER ============ */
+        .topbar { background: var(--forest-dk); color: #d6dbd2; font-size: 13px; }
+        .topbar .row { display: flex; justify-content: space-between; padding: 8px 0; flex-wrap: wrap; gap: 10px; }
+        .topbar a { color: #fff; }
+
+        header.site { position: sticky; top: 12px; z-index: 50; margin-top: 12px; }
+        header.site .bar {
+            background: #fff; border: 1px solid var(--line); border-radius: 999px;
+            box-shadow: var(--shadow); padding: 10px 18px;
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
+        }
+        .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 19px; color: var(--forest); letter-spacing: -.02em; font-family: -apple-system, "Inter", sans-serif; }
+        .logo-mark { width: 36px; height: 36px; background: var(--forest); color: #fff; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: 13px; }
+        nav.primary ul { list-style: none; display: flex; gap: 22px; padding: 0; margin: 0; }
+        nav.primary a { color: var(--ink); font-weight: 600; font-size: 14px; }
+        nav.primary a:hover { color: var(--green); }
+        .header-cta { display: flex; align-items: center; gap: 12px; }
+        .phone-link { color: var(--forest); font-weight: 800; font-size: 14px; }
+        @media (max-width: 1000px) { nav.primary { display: none; } }
+
+        /* ============ HERO (side-by-side w/ stats + form) ============ */
+        .hero { padding: 50px 0 70px; }
+        .hero .row { display: grid; grid-template-columns: 1fr 1.05fr; gap: 48px; align-items: center; }
+        @media (max-width: 1000px) { .hero .row { grid-template-columns: 1fr; } }
+        .hero-left h1 { margin-top: 16px; }
+        .hero-left .lede { max-width: 520px; margin-bottom: 24px; }
+        .hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+
+        .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        @media (max-width: 600px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
+        .stat { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px; text-align: center; }
+        .stat .num { font-size: 26px; font-weight: 900; color: var(--green); line-height: 1; margin-bottom: 4px; font-family: Georgia, serif; font-weight: 700; }
+        .stat .lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-weight: 700; }
+
+        /* Quote card */
+        .quote-card {
+            background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+            padding: 30px; box-shadow: var(--shadow);
+            display: flex; flex-direction: column; gap: 14px;
+        }
+        .quote-card h3 { font-size: 22px; margin: 0; font-family: Georgia, serif; font-weight: 400; }
+        .quote-card h3 em { color: var(--green); font-style: italic; }
+        .qrow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 700px) { .qrow { grid-template-columns: 1fr; } }
+        .field label { display: block; font-weight: 700; font-size: 12px; color: var(--forest); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .06em; }
+        .field input, .field select {
+            width: 100%; padding: 12px 14px; font-size: 15px; border-radius: 10px;
+            border: 1.5px solid var(--line); background: #fff; color: var(--ink); font-family: inherit;
+        }
+        .field input:focus, .field select:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px rgba(0,112,74,.12); }
+        .quote-card .submit { padding: 16px; font-size: 16px; }
+        .quote-card .or { font-size: 13px; color: var(--muted); text-align: center; margin-top: 4px; }
+
+        /* ============ TRUST BAND (floating) ============ */
+        .trust-band-wrap { padding: 0 24px; }
+        .trust-band {
+            background: var(--forest); color: #fff; padding: 28px 0;
+            border-radius: 22px;
+        }
+        .trust-band .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; padding: 0 24px; }
+        @media (max-width: 800px) { .trust-band .grid { grid-template-columns: repeat(2, 1fr); } }
+        .tb { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .tb .stars { color: #fff; font-size: 16px; letter-spacing: 2px; }
+        .tb .score { font-weight: 900; font-size: 22px; color: #fff; }
+        .tb .src { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--cream-2); font-weight: 700; }
+
+        /* ============ SECTIONS ============ */
+        section.std { padding: 90px 0; }
+        section.std.on-white { background: #fff; }
+        section.std.on-dark { background: var(--forest); color: #fff; }
+        section.std.on-dark h2 { color: #fff; }
+        section.std.on-dark .lede { color: var(--cream-2); }
+        .section-head { max-width: 760px; margin: 0 auto 50px; text-align: center; }
+        .section-head .rule { margin: 14px auto 22px; }
+
+        /* ============ SERVICES (image-style overlay cards) ============ */
+        .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        @media (max-width: 900px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .svc-grid { grid-template-columns: 1fr; } }
+        .svc-card {
+            position: relative; border-radius: var(--radius); overflow: hidden;
+            aspect-ratio: 5 / 4;
+            background: linear-gradient(135deg, var(--forest), var(--forest-dk));
+            color: #fff; padding: 26px;
+            display: flex; flex-direction: column; justify-content: space-between;
+            transition: transform .15s, box-shadow .15s;
+        }
+        .svc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); color: #fff; }
+        .svc-card::before {
+            content: ""; position: absolute; inset: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(0,112,74,.4), transparent 60%);
+            pointer-events: none;
+        }
+        .svc-card > * { position: relative; z-index: 1; }
+        .svc-card .icon-circle {
+            width: 52px; height: 52px; border-radius: 14px; background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.2);
+            display: grid; place-items: center; font-size: 24px;
+        }
+        .svc-num {
+            position: absolute; top: 20px; right: 24px; font-family: Georgia, serif;
+            font-size: 20px; color: rgba(255,255,255,.4); z-index: 1; font-style: italic;
+        }
+        .svc-card h3 { color: #fff; margin: 0 0 6px; font-size: 22px; }
+        .svc-card p { color: var(--cream-2); font-size: 14px; margin: 0 0 12px; }
+        .svc-card .more { color: #fff; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+        .svc-card.green { background: linear-gradient(135deg, var(--green), var(--green-dk)); }
+        .svc-card.cream { background: var(--cream); color: var(--forest); }
+        .svc-card.cream::before { background: radial-gradient(circle at 80% 20%, rgba(0,112,74,.18), transparent 60%); }
+        .svc-card.cream h3, .svc-card.cream .more { color: var(--forest); }
+        .svc-card.cream p { color: var(--muted); }
+        .svc-card.cream .icon-circle { background: #fff; border-color: var(--line); }
+        .svc-card.cream .svc-num { color: rgba(30,57,50,.25); }
+
+        /* ============ FLAT-FEE: infographic + compare ============ */
+        .ff-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 40px; }
+        @media (max-width: 900px) { .ff-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 540px) { .ff-grid { grid-template-columns: 1fr; } }
+        .ff-card { background: #fff; padding: 28px 22px; text-align: center; border: 1px solid var(--line); border-radius: var(--radius); }
+        .ff-card .ff-icon { width: 60px; height: 60px; margin: 0 auto 16px; background: var(--green); color: #fff; border-radius: 50%; display: grid; place-items: center; font-size: 24px; }
+        .ff-card h4 { color: var(--forest); margin: 0 0 8px; font-size: 17px; }
+        .ff-card p { font-size: 14px; color: var(--muted); margin: 0; }
+
+        .compare-wrap { max-width: 980px; margin: 0 auto; }
+        .compare {
+            background: #fff; border-radius: var(--radius); border: 1px solid var(--line);
+            overflow: hidden; box-shadow: var(--shadow);
+        }
+        .compare table { width: 100%; border-collapse: collapse; }
+        .compare th, .compare td { padding: 16px 22px; text-align: left; border-bottom: 1px solid var(--line); font-size: 15px; }
+        .compare th { background: var(--forest); color: #fff; font-weight: 700; }
+        .compare th:nth-child(2) { background: var(--green); }
+        .compare tr:last-child td { border-bottom: 0; }
+        .compare td:nth-child(2) { color: var(--green); font-weight: 700; }
+        .compare td:nth-child(3) { color: var(--muted); }
+        .compare .check { color: var(--green); font-weight: 900; }
+        .compare .x { color: #b03030; font-weight: 900; }
+        .compare-label { text-align: center; max-width: 600px; margin: 0 auto 18px; color: var(--muted); font-size: 15px; }
+
+        /* ============ TIMELINE + MAP ============ */
+        .tl-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        @media (max-width: 900px) { .tl-wrap { grid-template-columns: 1fr; } }
+        .steps-col { position: relative; padding-left: 30px; }
+        .steps-col::before { content: ""; position: absolute; left: 12px; top: 8px; bottom: 8px; width: 2px; background: var(--green-lt); }
+        .step-item { position: relative; padding-bottom: 32px; }
+        .step-item:last-child { padding-bottom: 0; }
+        .step-item .dot {
+            position: absolute; left: -30px; top: 4px; width: 26px; height: 26px;
+            border-radius: 50%; background: var(--green); color: #fff;
+            display: grid; place-items: center; font-weight: 900; font-size: 12px;
+            box-shadow: 0 0 0 4px var(--green-lt);
+        }
+        .step-item h4 { margin: 0 0 6px; color: var(--forest); font-size: 19px; }
+        .step-item p { color: var(--muted); font-size: 15px; margin: 0; }
+
+        .map-card {
+            background: linear-gradient(135deg, var(--green-lt), #fff);
+            border: 1px solid var(--line); border-radius: var(--radius);
+            padding: 30px; position: relative; min-height: 420px; box-shadow: var(--shadow);
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .map-art {
+            flex: 1; position: relative; margin: 18px 0;
+            background:
+                    radial-gradient(circle at 30% 40%, rgba(0,112,74,.25), transparent 25%),
+                    radial-gradient(circle at 70% 60%, rgba(0,112,74,.20), transparent 22%),
+                    radial-gradient(circle at 50% 50%, rgba(0,112,74,.30), transparent 18%);
+            border-radius: 12px; border: 1px dashed var(--line);
+        }
+        .pin {
+            position: absolute; transform: translate(-50%, -100%);
+            background: var(--forest); color: #fff; padding: 4px 8px;
+            font-size: 11px; font-weight: 700; border-radius: 6px; white-space: nowrap;
+            text-transform: uppercase; letter-spacing: .06em;
+        }
+        .pin::after { content: ""; position: absolute; bottom: -5px; left: 50%; margin-left: -5px; border: 5px solid transparent; border-top-color: var(--forest); }
+        .pin.green { background: var(--green); } .pin.green::after { border-top-color: var(--green); }
+
+        /* ============ PULL QUOTE (founder) ============ */
+        .pull {
+            background: var(--forest); color: #fff; padding: 110px 0; text-align: center;
+            background-image:
+                    radial-gradient(circle at 30% 30%, rgba(0,112,74,.4), transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(0,112,74,.2), transparent 60%);
+        }
+        .pull blockquote {
+            font-family: Georgia, serif; font-style: italic; font-size: clamp(28px, 3.4vw, 42px);
+            line-height: 1.3; max-width: 880px; margin: 0 auto 24px; color: #fff;
+        }
+        .pull .by { color: var(--cream); text-transform: uppercase; letter-spacing: .2em; font-size: 13px; font-weight: 700; }
+
+        /* ============ REVIEWS (spotlight + mini grid) ============ */
+        .spotlight {
+            background: linear-gradient(135deg, var(--forest), var(--forest-dk));
+            color: #fff; border-radius: var(--radius); padding: 60px;
+            box-shadow: var(--shadow-lg); position: relative; overflow: hidden; margin-bottom: 22px;
+        }
+        .spotlight::before {
+            content: '"'; position: absolute; top: -60px; left: 30px;
+            font-size: 280px; line-height: 1; color: rgba(255,255,255,.06);
+            font-family: Georgia, serif; pointer-events: none;
+        }
+        .spotlight blockquote { font-size: clamp(22px, 2.6vw, 30px); line-height: 1.4; max-width: 760px; margin: 0 0 22px; color: #fff; position: relative; font-family: Georgia, serif; font-style: italic; font-weight: 400; }
+        .spotlight .by { color: var(--cream); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; font-size: 13px; position: relative; }
+        .rv-mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        @media (max-width: 800px) { .rv-mini-grid { grid-template-columns: 1fr; } }
+        .rv-mini { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+        .rv-mini .stars { color: var(--green); font-size: 16px; letter-spacing: 2px; margin-bottom: 10px; }
+        .rv-mini p { font-size: 14px; color: var(--ink); margin: 0 0 12px; font-family: Georgia, serif; font-style: italic; }
+        .rv-mini .by { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+
+        /* ============ SERVICE AREA ============ */
+        .city-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 30px; }
+        @media (max-width: 900px) { .city-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 600px) { .city-grid { grid-template-columns: repeat(2, 1fr); } }
+        .city {
+            background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+            color: #fff; padding: 13px; border-radius: 10px; font-weight: 600; font-size: 14px;
+            text-align: center; transition: background .15s, border-color .15s;
+        }
+        .city:hover { background: rgba(255,255,255,.14); border-color: var(--cream); color: #fff; }
+
+        /* ============ FINAL CTA ============ */
+        .final-wrap { padding: 0 24px; margin-bottom: 24px; }
+        .final {
+            background: var(--green); color: #fff; padding: 80px 24px; text-align: center;
+            border-radius: 22px;
+            background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,.12), transparent 50%);
+        }
+        .final h2 { color: #fff; }
+        .final h2 em { color: var(--cream); }
+        .final .lede { color: rgba(255,255,255,.85); max-width: 580px; margin: 14px auto 26px; }
+        .final .row { display: inline-flex; gap: 14px; align-items: center; flex-wrap: wrap; justify-content: center; }
+        .final .btn-primary { background: #fff; color: var(--green); box-shadow: none; }
+        .final .btn-primary:hover { background: var(--cream); color: var(--green); }
+        .final .phone { color: #fff; font-weight: 800; font-size: 18px; }
+
+        /* ============ FOOTER ============ */
+        footer.site { background: var(--forest-dk); color: #d6dbd2; padding: 60px 0 28px; }
+        footer.site .grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+        @media (max-width: 800px) { footer.site .grid { grid-template-columns: 1fr 1fr; } }
+        footer.site h4 { color: #fff; margin: 0 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .12em; font-family: inherit; }
+        footer.site a { color: #d6dbd2; font-size: 14px; display: block; padding: 4px 0; }
+        footer.site a:hover { color: #fff; }
+        footer.site .small { font-size: 13px; color: #9aa093; border-top: 1px solid #234039; padding-top: 18px; margin-top: 38px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+        /* Sticky mobile */
+        .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: #fff; border-top: 1px solid var(--line); padding: 10px; gap: 10px; box-shadow: 0 -10px 30px rgba(0,0,0,.12); }
+        .mobile-cta .btn { flex: 1; padding: 12px; }
+        @media (max-width: 700px) { .mobile-cta { display: flex; } body { padding-bottom: 76px; } }
+    </style>
+</head>
+<body>
+
+<!-- ================== TOP BAR ================== -->
+<div class="topbar">
+    <div class="container row">
+        <div>Open 8 AM – 8 PM &nbsp;·&nbsp; Locally owned since 2015 &nbsp;·&nbsp; Berrien Springs, MI</div>
+        <div><a href="tel:2692403518">📞 (269) 240-3518</a></div>
+    </div>
+</div>
+
+<!-- ================== PILL HEADER ================== -->
+<header class="site">
+    <div class="container">
+        <div class="bar">
+            <a href="/" class="logo"><span class="logo-mark">EH</span> Elite Haulerz</a>
+            <nav class="primary">
+                <ul>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/locations/">Service Area</a></li>
+                    <li><a href="/gallery/">Gallery</a></li>
+                    <li><a href="/about-us/">About</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a class="phone-link" href="tel:2692403518">(269) 240-3518</a>
+                <a class="btn btn-primary" href="#quote" style="padding: 10px 18px; font-size: 14px;">Free Quote</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================== HERO ================== -->
+<section class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="hero-left">
+                <span class="eyebrow">⚡ Free quote in 2 minutes</span>
+                <h1>The careful way <em>to move</em> in Southwest Michigan &amp; Northern Indiana.</h1>
+                <p class="lede">Locally owned. Flat hourly rates. Fully insured. The team you'd want for a 2-bedroom apartment, an office build-out, or a piano up three flights.</p>
+                <div class="hero-cta-row">
+                    <a class="btn btn-primary" href="#quote">Get my free quote</a>
+                    <a class="btn btn-light" href="tel:2692403518">📞 (269) 240-3518</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat"><div class="num">$295+</div><div class="lbl">Starting</div></div>
+                    <div class="stat"><div class="num">200mi</div><div class="lbl">Radius</div></div>
+                    <div class="stat"><div class="num">10yr+</div><div class="lbl">Experience</div></div>
+                    <div class="stat"><div class="num">4.9★</div><div class="lbl">Google</div></div>
+                </div>
+            </div>
+
+            <form class="quote-card" id="quote" novalidate>
+                <h3>Tell us about your <em>move</em></h3>
+                <p style="color:var(--muted); font-size:14px; margin:0;">Same-day flat-rate quote. No spam, no obligations.</p>
+
+                <div class="qrow">
+                    <div class="field"><label>Move date</label><input type="date" required></div>
+                    <div class="field"><label>Type</label>
+                        <select required>
+                            <option value="">Choose…</option>
+                            <option>Residential apartment</option>
+                            <option>Residential house</option>
+                            <option>Office / commercial</option>
+                            <option>Specialty item</option>
+                            <option>Long distance</option>
+                        </select></div>
+                </div>
+
+                <div class="qrow">
+                    <div class="field"><label>From (ZIP)</label><input maxlength="5" placeholder="49103" required></div>
+                    <div class="field"><label>To (ZIP)</label><input maxlength="5" placeholder="46601" required></div>
+                </div>
+
+                <div class="field"><label>Size of move</label>
+                    <select required>
+                        <option value="">Choose…</option>
+                        <option>Studio</option><option>1 bedroom</option><option>2 bedroom</option>
+                        <option>3 bedroom</option><option>4+ bedroom</option><option>Office</option>
+                    </select></div>
+
+                <div class="qrow">
+                    <div class="field"><label>Name</label><input required></div>
+                    <div class="field"><label>Phone</label><input type="tel" placeholder="(269) 555-0100" required></div>
+                </div>
+
+                <div class="field"><label>Email</label><input type="email" required></div>
+
+                <button class="btn btn-primary submit" type="submit">Send me my quote →</button>
+                <div class="or">Prefer to talk? <a href="tel:2692403518" style="font-weight: 700;">Call (269) 240-3518</a></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ================== TRUST BAND ================== -->
+<div class="trust-band-wrap">
+    <div class="container" style="padding: 0;">
+        <div class="trust-band">
+            <div class="grid">
+                <div class="tb"><div class="stars">★★★★★</div><div class="score">4.9 / 5</div><div class="src">Google · 120+ reviews</div></div>
+                <div class="tb"><div class="stars">★★★★★</div><div class="score">5.0 / 5</div><div class="src">Yelp · Berrien Springs</div></div>
+                <div class="tb"><div class="stars">★★★★★</div><div class="score">Licensed</div><div class="src">FMCSA · MDOT</div></div>
+                <div class="tb"><div class="stars">★★★★★</div><div class="score">Insured</div><div class="src">Full coverage</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================== SERVICES ================== -->
+<section class="std on-white">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Our services</span>
+            <h2 style="margin-top: 14px;">Six ways we'll get you <em>home</em>.</h2>
+            <span class="rule center"></span>
+            <p class="lede">From a single piano to a 4-bedroom move across state lines, we have the team and equipment for it.</p>
+        </div>
+
+        <div class="svc-grid">
+            <a class="svc-card green" href="/services/residential-moving/">
+                <span class="svc-num">01</span>
+                <div class="icon-circle">🏠</div>
+                <div>
+                    <h3>Residential &amp; Local</h3>
+                    <p>Studios to 5-bedroom homes, anywhere within 200 miles of Berrien Springs.</p>
+                    <span class="more">Learn more →</span>
+                </div>
+            </a>
+            <a class="svc-card" href="/services/long-distance-moving/">
+                <span class="svc-num">02</span>
+                <div class="icon-circle">🛣️</div>
+                <div>
+                    <h3>Long-Distance Moving</h3>
+                    <p>Cross-state moves with timely delivery and transparent pricing — no fuel surcharges.</p>
+                    <span class="more">Learn more →</span>
+                </div>
+            </a>
+            <a class="svc-card cream" href="/services/commercial-moving/">
+                <span class="svc-num">03</span>
+                <div class="icon-circle">🏢</div>
+                <div>
+                    <h3>Office &amp; Commercial</h3>
+                    <p>Weekend and after-hours moves to minimize downtime. COIs on request.</p>
+                    <span class="more">Learn more →</span>
+                </div>
+            </a>
+            <a class="svc-card cream" href="/services/specialty-moving/">
+                <span class="svc-num">04</span>
+                <div class="icon-circle">🎹</div>
+                <div>
+                    <h3>Specialty Moving</h3>
+                    <p>Pianos, gun safes, pool tables, antiques, art, and oversized items.</p>
+                    <span class="more">Learn more →</span>
+                </div>
+            </a>
+            <a class="svc-card green" href="/services/packers-and-movers/">
+                <span class="svc-num">05</span>
+                <div class="icon-circle">📦</div>
+                <div>
+                    <h3>Packing &amp; Unpacking</h3>
+                    <p>Whole home, partial, or just your valuables — no minimum, materials matched to each item.</p>
+                    <span class="more">Learn more →</span>
+                </div>
+            </a>
+            <a class="svc-card" href="/services/last-minute-moves/">
+                <span class="svc-num">06</span>
+                <div class="icon-circle">⚡</div>
+                <div>
+                    <h3>Last-Minute Moves</h3>
+                    <p>Need to move this week? We keep slots open for urgent moves and emergency packing.</p>
+                    <span class="more">Learn more →</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ================== FLAT-FEE: WHAT'S INCLUDED ================== -->
+<section class="std">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Flat-rate pricing</span>
+            <h2 style="margin-top: 14px;">No hidden <em>surprises</em>, ever.</h2>
+            <span class="rule center"></span>
+            <p class="lede">Quotes start at $295. The price you're quoted is the price you pay. Here's what's always included at no extra charge.</p>
+        </div>
+
+        <div class="ff-grid">
+            <div class="ff-card">
+                <div class="ff-icon">📺</div>
+                <h4>TVs, mirrors &amp; art</h4>
+                <p>Wrapped, padded, and boxed at no extra charge.</p>
+            </div>
+            <div class="ff-card">
+                <div class="ff-icon">🛋️</div>
+                <h4>Furniture protection</h4>
+                <p>Blankets and shrink wrap on every couch, mattress, and dresser.</p>
+            </div>
+            <div class="ff-card">
+                <div class="ff-icon">🚪</div>
+                <h4>Walls, floors &amp; doors</h4>
+                <p>Corner guards and doorway pads at both addresses.</p>
+            </div>
+            <div class="ff-card">
+                <div class="ff-icon">⛽</div>
+                <h4>Travel &amp; fuel</h4>
+                <p>In-area travel time, fuel, and standard mileage — all included.</p>
+            </div>
+        </div>
+
+        <!-- COMPARE TABLE -->
+        <div class="compare-wrap">
+            <p class="compare-label">Most movers tack on charges that weren't in your original quote. Here's the difference:</p>
+            <div class="compare">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>What's included</th>
+                        <th>Elite Haulerz</th>
+                        <th>Typical mover</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>Flat-rate pricing locked before move day</td><td><span class="check">✓</span> Yes</td><td><span class="x">✗</span> Hourly + extras</td></tr>
+                    <tr><td>Furniture blankets &amp; shrink wrap</td><td><span class="check">✓</span> Included</td><td><span class="x">✗</span> Extra $50–$150</td></tr>
+                    <tr><td>TVs &amp; mirrors boxed and protected</td><td><span class="check">✓</span> Included</td><td><span class="x">✗</span> Extra per item</td></tr>
+                    <tr><td>Floor &amp; doorway protection</td><td><span class="check">✓</span> Included</td><td><span class="x">✗</span> Extra fee</td></tr>
+                    <tr><td>Travel time within service area</td><td><span class="check">✓</span> Included</td><td><span class="x">✗</span> Billed hourly</td></tr>
+                    <tr><td>Fuel surcharge</td><td><span class="check">✓</span> Never separate</td><td><span class="x">✗</span> Added at the end</td></tr>
+                    <tr><td>FMCSA &amp; MDOT registered</td><td><span class="check">✓</span> Both</td><td><span class="x">?</span> Often unregistered</td></tr>
+                    <tr><td>Locally owned &amp; operated</td><td><span class="check">✓</span> Since 2015</td><td><span class="x">✗</span> Franchise / out-of-state</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================== HOW IT WORKS + MAP ================== -->
+<section class="std on-white">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">How it works</span>
+            <h2 style="margin-top: 14px;">Three steps. <em>Same day</em>.</h2>
+            <span class="rule center"></span>
+            <p class="lede">No phone tag. No "we'll get back to you." A real quote within hours.</p>
+        </div>
+        <div class="tl-wrap">
+            <div class="steps-col">
+                <div class="step-item">
+                    <div class="dot">1</div>
+                    <h4>Tell us about your move</h4>
+                    <p>Fill out the form or call (269) 240-3518. Takes 2 minutes.</p>
+                </div>
+                <div class="step-item">
+                    <div class="dot">2</div>
+                    <h4>Get your flat-rate quote</h4>
+                    <p>Same-day quote in writing. No hidden fees, no surprises on move day.</p>
+                </div>
+                <div class="step-item">
+                    <div class="dot">3</div>
+                    <h4>We do the heavy lifting</h4>
+                    <p>Clean-cut, uniformed movers arrive on time and treat your stuff like our own.</p>
+                </div>
+                <div class="step-item">
+                    <div class="dot">4</div>
+                    <h4>You unpack in peace</h4>
+                    <p>Furniture placed where you want it. Empty boxes hauled away on request.</p>
+                </div>
+            </div>
+            <div class="map-card">
+                <div>
+                    <span class="eyebrow">Service area</span>
+                    <h3 style="font-size: 22px; margin-top: 10px; font-family: Georgia, serif; font-weight: 400;">200-mile radius from <em style="color:var(--green); font-style:italic;">Berrien Springs, MI</em>.</h3>
+                    <p style="color: var(--muted); margin: 0;">Click any city below for a local quote.</p>
+                </div>
+                <div class="map-art">
+                    <div class="pin" style="left: 20%; top: 30%;">St. Joseph</div>
+                    <div class="pin green" style="left: 50%; top: 50%;">Berrien Springs</div>
+                    <div class="pin" style="left: 80%; top: 25%;">Kalamazoo</div>
+                    <div class="pin" style="left: 70%; top: 70%;">South Bend</div>
+                    <div class="pin" style="left: 25%; top: 75%;">New Buffalo</div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+                    <a class="btn btn-light" href="/locations/movers-st-joseph-mi/" style="padding: 8px; font-size: 12px;">St. Joseph</a>
+                    <a class="btn btn-light" href="/locations/movers-south-bend-in/" style="padding: 8px; font-size: 12px;">South Bend</a>
+                    <a class="btn btn-light" href="/locations/movers-niles-mi/" style="padding: 8px; font-size: 12px;">Niles</a>
+                    <a class="btn btn-light" href="/locations/movers-benton-harbor-mi/" style="padding: 8px; font-size: 12px;">Benton Harbor</a>
+                    <a class="btn btn-light" href="/locations/movers-mishawaka-in/" style="padding: 8px; font-size: 12px;">Mishawaka</a>
+                    <a class="btn btn-light" href="/locations/" style="padding: 8px; font-size: 12px;">+ 10 more →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================== PULL QUOTE / FOUNDER ================== -->
+<section class="pull">
+    <div class="container">
+        <blockquote>"We live here. Your move helps the community we both call home — and that's the difference between a moving company and a <em>local</em> moving company."</blockquote>
+        <div class="by">— Amir, Founder · Elite Haulerz, Berrien Springs</div>
+    </div>
+</section>
+
+<!-- ================== REVIEWS (spotlight + mini) ================== -->
+<section class="std">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Customer stories</span>
+            <h2 style="margin-top: 14px;">10+ years. Thousands of moves. <em>One promise</em>.</h2>
+            <span class="rule center"></span>
+        </div>
+
+        <div class="spotlight">
+            <blockquote>From the quote to the last box, everything was easy. The team showed up early, wrapped everything carefully, and the price was exactly what they quoted me. The flat rate made the whole thing predictable — no surprise charges, no "sorry, the truck had to come back" excuses. I'd hire them again in a second.</blockquote>
+            <div class="by">Sarah M. · 3-Bedroom Move · St. Joseph, MI</div>
+        </div>
+
+        <div class="rv-mini-grid">
+            <div class="rv-mini">
+                <div class="stars">★★★★★</div>
+                <p>"Moved a 3-bedroom from Niles to South Bend. Fast, careful with our furniture, and didn't nickel-and-dime us on tolls or fuel."</p>
+                <div class="by">David R. · Niles, MI</div>
+            </div>
+            <div class="rv-mini">
+                <div class="stars">★★★★★</div>
+                <p>"Upright piano up two flights of stairs without a scratch. Real pros. Flat rate kept it predictable."</p>
+                <div class="by">Janet K. · South Bend, IN</div>
+            </div>
+            <div class="rv-mini">
+                <div class="stars">★★★★★</div>
+                <p>"Office move on a Saturday so my staff didn't lose a Monday. Unpacked before IT even showed up."</p>
+                <div class="by">Marcus T. · Benton Harbor, MI</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 32px;">
+            <a class="btn btn-dark" href="https://www.yelp.com/biz/elite-haulerz-berrien-springs">Read all our reviews →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ================== SERVICE AREA (full grid on dark) ================== -->
+<section class="std on-dark">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow on-dark">Service area</span>
+            <h2 style="margin-top: 14px;">Berrien County, MI &amp; <em>Northern Indiana</em>.</h2>
+            <span class="rule center" style="background: var(--cream);"></span>
+            <p class="lede">200-mile service radius from Berrien Springs. Click your city for a local quote:</p>
+        </div>
+        <div class="city-grid">
+            <a class="city" href="/locations/movers-st-joseph-mi/">St. Joseph, MI</a>
+            <a class="city" href="/locations/movers-benton-harbor-mi/">Benton Harbor, MI</a>
+            <a class="city" href="/locations/movers-niles-mi/">Niles, MI</a>
+            <a class="city" href="/locations/movers-stevensville-mi/">Stevensville, MI</a>
+            <a class="city" href="/locations/movers-bridgman-mi/">Bridgman, MI</a>
+            <a class="city" href="/locations/movers-new-buffalo-mi/">New Buffalo, MI</a>
+            <a class="city" href="/locations/movers-coloma-mi/">Coloma, MI</a>
+            <a class="city" href="/locations/movers-paw-paw-mi/">Paw Paw, MI</a>
+            <a class="city" href="/locations/movers-kalamazoo-mi/">Kalamazoo, MI</a>
+            <a class="city" href="/locations/movers-portage-mi/">Portage, MI</a>
+            <a class="city" href="/locations/movers-south-bend-in/">South Bend, IN</a>
+            <a class="city" href="/locations/movers-mishawaka-in/">Mishawaka, IN</a>
+            <a class="city" href="/locations/movers-granger-in/">Granger, IN</a>
+            <a class="city" href="/locations/movers-michigan-city-in/">Michigan City, IN</a>
+            <a class="city" href="/locations/movers-la-porte-in/">La Porte, IN</a>
+        </div>
+    </div>
+</section>
+
+<!-- ================== FINAL CTA (green card) ================== -->
+<div class="final-wrap">
+    <div class="container" style="padding: 0;">
+        <div class="final">
+            <span class="eyebrow on-dark" style="background: rgba(255,255,255,.18);">Ready to move?</span>
+            <h2 style="margin-top: 16px;">Let's get you <em>home</em>.</h2>
+            <p class="lede">Free flat-rate quote in under 2 minutes — or talk to a real person right now.</p>
+            <div class="row">
+                <a class="btn btn-primary" href="#quote">Get My Free Quote</a>
+                <a class="phone" href="tel:2692403518">📞 (269) 240-3518</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================== FOOTER ================== -->
+<footer class="site">
+    <div class="container">
+        <div class="grid">
+            <div>
+                <div class="logo" style="color:#fff;"><span class="logo-mark" style="background:#fff;color:var(--forest);">EH</span> Elite Haulerz</div>
+                <p style="margin-top: 14px; color:#9aa093; font-size: 14px;">Locally owned movers serving Berrien County, MI and Northern Indiana since 2015. Fully licensed and insured. FMCSA &amp; MDOT registered.</p>
+                <p style="color:#9aa093; font-size: 14px;">📞 <a href="tel:2692403518" style="color:#fff;">(269) 240-3518</a><br>✉️ <a href="mailto:info@elitehaulerz.com" style="color:#fff;">info@elitehaulerz.com</a><br>🕒 Open 8 AM – 8 PM</p>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <a href="/services/residential-moving/">Residential</a>
+                <a href="/services/long-distance-moving/">Long-distance</a>
+                <a href="/services/commercial-moving/">Commercial</a>
+                <a href="/services/specialty-moving/">Specialty</a>
+                <a href="/services/packers-and-movers/">Packing</a>
+            </div>
+            <div>
+                <h4>Service Area</h4>
+                <a href="/locations/movers-st-joseph-mi/">St. Joseph, MI</a>
+                <a href="/locations/movers-south-bend-in/">South Bend, IN</a>
+                <a href="/locations/movers-benton-harbor-mi/">Benton Harbor, MI</a>
+                <a href="/locations/movers-niles-mi/">Niles, MI</a>
+                <a href="/locations/movers-mishawaka-in/">Mishawaka, IN</a>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <a href="/about-us/">About</a>
+                <a href="/gallery/">Gallery</a>
+                <a href="/faq/">FAQ</a>
+                <a href="/contact/">Contact</a>
+                <a href="/services/blog/">Blog</a>
+            </div>
+        </div>
+        <div class="small">
+            <span>© 2026 Elite Haulerz, LLC. All rights reserved.</span>
+            <span><a href="/privacy-policy/" style="color:#9aa093;">Privacy</a> · <a href="https://www.facebook.com/EliteHaulerz" style="color:#9aa093;">Facebook</a> · <a href="https://twitter.com/elitehaulerz" style="color:#9aa093;">X</a></span>
+        </div>
+    </div>
+</footer>
+
+<!-- Sticky mobile -->
+<div class="mobile-cta">
+    <a class="btn btn-dark" href="tel:2692403518">📞 Call</a>
+    <a class="btn btn-primary" href="#quote">Get Quote</a>
+</div>
+
+<!-- =====================================================
+     ANTI-SPAM: honeypot + min-fill-time + throttle + debounce
+     These are *front-line* defenses. Server-side rate limiting
+     (Cloudflare, WordPress plugin, etc.) is still required.
+===================================================== -->
+<script>
+    (function () {
+        var form = document.getElementById('quote');
+        if (!form) return;
+
+        // ---- Tunables ------------------------------------------------------------
+        var MIN_FILL_SECONDS    = 3;       // human reading + filling time
+        var SUBMIT_COOLDOWN_MS  = 8000;    // disable button window after a submit (debounce)
+        var MAX_SUBMITS_PER_HOUR = 3;      // per-browser throttle
+        var STORAGE_KEY = 'eh_recent_submits';
+        // -------------------------------------------------------------------------
+
+        var loadedAt  = Date.now();
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var originalBtnLabel = submitBtn ? submitBtn.innerHTML : '';
+        var inFlight  = false;
+
+        // 1) HONEYPOT — an invisible field bots love to fill in.
+        //    Added in JS so it never appears in the source for bots crawling HTML.
+        var honey = document.createElement('input');
+        honey.type = 'text';
+        honey.name = 'website_url';   // tempting decoy name
+        honey.tabIndex = -1;
+        honey.autocomplete = 'off';
+        honey.setAttribute('aria-hidden', 'true');
+        honey.style.cssText = 'position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;';
+        form.appendChild(honey);
+
+        // 2) THROTTLE helpers — track recent submits in localStorage.
+        function recentSubmits() {
+            try {
+                var raw = localStorage.getItem(STORAGE_KEY);
+                var arr = raw ? JSON.parse(raw) : [];
+                var cutoff = Date.now() - 60 * 60 * 1000;
+                return arr.filter(function (t) { return t > cutoff; });
+            } catch (e) { return []; }
+        }
+        function recordSubmit() {
+            var list = recentSubmits();
+            list.push(Date.now());
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); } catch (e) {}
+        }
+
+        // 3) DEBOUNCE — disable button + show feedback.
+        function lockButton(label) {
+            if (!submitBtn) return;
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+            submitBtn.style.cursor = 'not-allowed';
+            submitBtn.innerHTML = label;
+        }
+        function unlockButton() {
+            if (!submitBtn) return;
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '';
+            submitBtn.style.cursor = '';
+            submitBtn.innerHTML = originalBtnLabel;
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (inFlight) return;
+
+            // HONEYPOT trip — silently drop. Don't tell the bot why it failed.
+            if (honey.value !== '') {
+                console.warn('[security] honeypot filled — submission ignored');
+                return;
+            }
+
+            // MIN-FILL-TIME check — bots fill instantly.
+            var elapsed = (Date.now() - loadedAt) / 1000;
+            if (elapsed < MIN_FILL_SECONDS) {
+                alert('Please take a moment to review your information before submitting.');
+                return;
+            }
+
+            // THROTTLE check.
+            var recent = recentSubmits();
+            if (recent.length >= MAX_SUBMITS_PER_HOUR) {
+                alert("You've submitted a few quote requests recently. Please call us at (269) 240-3518, or try again in an hour.");
+                return;
+            }
+
+            // BASIC required-field validation (the form has novalidate so we own it).
+            var fields = form.querySelectorAll('input[required], select[required]');
+            for (var i = 0; i < fields.length; i++) {
+                if (!fields[i].value || !fields[i].value.trim()) {
+                    fields[i].focus();
+                    alert('Please fill in all required fields before submitting.');
+                    return;
+                }
+            }
+
+            // All gates passed — submit.
+            inFlight = true;
+            lockButton('Sending…');
+
+            /* === REPLACE THIS BLOCK with your real submission ===
+               Your WordPress developer will swap this `setTimeout` with a real
+               call to your form handler — Elementor Forms, WPForms, Gravity
+               Forms, or a fetch() to /wp-json/contact-form-7/v1/contact-forms/ID/feedback.
+               Example with fetch():
+
+                 var formData = new FormData(form);
+                 fetch('/wp-admin/admin-ajax.php?action=eh_quote_submit', {
+                   method: 'POST', body: formData
+                 })
+                 .then(function (r) { return r.json(); })
+                 .then(function (json) { ...success / error... });
+            ============================================================ */
+            setTimeout(function () {
+                recordSubmit();
+                lockButton('✓ Quote request sent — we will call you shortly');
+                setTimeout(function () {
+                    unlockButton();
+                    inFlight = false;
+                }, SUBMIT_COOLDOWN_MS);
+            }, 800);
+        });
+    })();
+</script>
+
+</body>
+</html>
