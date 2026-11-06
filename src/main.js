@@ -434,7 +434,6 @@ children.push(new Paragraph({ children: [new PageBreak()] }));
 // Section 5: Page-by-page
 children.push(H1("5. Page-by-Page Notes"));
 
-children.push(H2("Homepage (/)"));
 children.push(bullet("Replace H1 \"Elite Haulerz, LLC.\" with a benefit-driven, geo-specific H1"));
 children.push(bullet("Replace lightweight contact form with the qualifying form"));
 children.push(bullet("Add review carousel and trust badges above the fold"));
