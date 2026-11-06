@@ -1,8 +1,7 @@
 {
-  "name": "${PROJECT_NAME}",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "elite-haulerz",
+  "version": "1.0.0",
+  "description": "Elite Haulerz moving company website",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
