@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Account Setup | Elite Haulerz</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/src/auth.css">
+</head>
+<body class="auth-page">
+  <header class="auth-header">
+    <a href="/" class="logo"><span class="logo-icon">EH</span> Elite Haulerz</a>
+  </header>
+
+  <main class="auth-main">
+    <section class="auth-card">
+      <h1 id="title">Set up your account</h1>
+      <p class="lead" id="lead">Checking your link…</p>
+      <p class="form-message" id="msg" role="alert" hidden></p>
+
+      <form id="setupForm" novalidate hidden>
+        <div class="field" id="usernameField">
+          <label for="username">Choose a username</label>
+          <input id="username" name="username" autocomplete="username"
+                 autocapitalize="none" spellcheck="false" maxlength="24">
+          <span class="hint">3–24 characters: lowercase letters, numbers, underscores.</span>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password"
+                 autocomplete="new-password" minlength="8">
+          <span class="hint">At least 8 characters.</span>
+        </div>
+        <div class="field">
+          <label for="confirm">Confirm password</label>
+          <input id="confirm" name="confirm" type="password" autocomplete="new-password">
+        </div>
+        <button class="btn btn-primary" type="submit" id="submitBtn">Create account</button>
+      </form>
+    </section>
+  </main>
+
+  <script type="module">
+    import { supabase, getSession, getProfile, showMessage } from '/src/auth.js';
+    import { USERNAME_PATTERN } from '/src/config.js';
+
+    const title = document.getElementById('title');
+    const lead = document.getElementById('lead');
+    const msg = document.getElementById('msg');
+    const form = document.getElementById('setupForm');
+    const usernameField = document.getElementById('usernameField');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Invite and reset emails land here. Supabase may send the error back in
+    // the URL (e.g. an expired link) instead of a session.
+    const params = new URLSearchParams(
+      window.location.hash.slice(1) || window.location.search
+    );
+    const linkError = params.get('error_description');
+
+    // Support token_hash links too, in case the email templates are customised.
+    const tokenHash = new URLSearchParams(window.location.search).get('token_hash');
+    const tokenType = new URLSearchParams(window.location.search).get('type');
+    if (tokenHash && ['invite', 'recovery'].includes(tokenType)) {
+      await supabase.auth.verifyOtp({ token_hash: tokenHash, type: tokenType });
+    }
+
+    const session = await getSession();
+    history.replaceState(null, '', window.location.pathname); // drop tokens from the address bar
+
+    let needsUsername = false;
+
+    if (!session) {
+      title.textContent = 'Link expired';
+      // Fixed wording: never echo text from the URL, so a crafted link can't
+      // put a fake message (e.g. "call this number") on our page.
+      lead.textContent = linkError
+        ? 'This link has expired or was already used. Ask your manager to send a new invite, or use “Forgot password” on the login page.'
+        : 'This link is invalid or has already been used. Ask your manager for a new invite, or use “Forgot password” on the login page.';
+    } else {
+      const profile = await getProfile(session.user.id);
+      needsUsername = !profile;
+      if (needsUsername) {
+        lead.textContent = `Welcome! Pick the username you'll log in with (${session.user.email}).`;
+      } else {
+        title.textContent = 'Set a new password';
+        lead.textContent = `Signed in as ${profile.username}.`;
+        usernameField.hidden = true;
+        submitBtn.textContent = 'Save password';
+      }
+      form.hidden = false;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = form.username.value.trim().toLowerCase();
+      const password = form.password.value;
+
+      if (needsUsername && !USERNAME_PATTERN.test(username)) {
+        return showMessage(msg, 'Usernames are 3–24 characters: lowercase letters, numbers, or underscores.');
+      }
+      if (password.length < 8) return showMessage(msg, 'Password must be at least 8 characters.');
+      if (password !== form.confirm.value) return showMessage(msg, "Passwords don't match.");
+
+      submitBtn.disabled = true;
+      showMessage(msg, '');
+
+      // Claim the username first, so a "taken" error doesn't leave a half-done account.
+      if (needsUsername) {
+        const { error } = await supabase
+          .from('profiles')
+          .insert({ id: session.user.id, username });
+        if (error) {
+          submitBtn.disabled = false;
+          return showMessage(msg, error.code === '23505'
+            ? 'That username is taken. Try another.'
+            : 'Could not save your username. Please try again.');
+        }
+        needsUsername = false;
+        usernameField.hidden = true; // username is saved; only the password step remains
+      }
+
+      const { error } = await supabase.auth.updateUser({ password });
+      if (error) {
+        submitBtn.disabled = false;
+        return showMessage(msg, error.message);
+      }
+      window.location.replace('/dashboard.html');
+    });
+  </script>
+</body>
+</html>
