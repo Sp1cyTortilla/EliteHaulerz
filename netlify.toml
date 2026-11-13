@@ -1,36 +1,3 @@
 [build]
   command = "npm run build"
   publish = "dist"
-
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
-
-# Basic hardening for every page.
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Worker pages hold login sessions, so lock them down further: scripts only
-# from this site, network calls only to this site and Supabase, never framed.
-[[headers]]
-  for = "/login.html"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self'; connect-src 'self' https://fmmilmstqovaivpgpcah.supabase.co; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"
-    Cache-Control = "no-store"
-
-[[headers]]
-  for = "/setup.html"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self'; connect-src 'self' https://fmmilmstqovaivpgpcah.supabase.co; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"
-    Referrer-Policy = "no-referrer"
-    Cache-Control = "no-store"
-
-[[headers]]
-  for = "/dashboard.html"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self'; connect-src 'self' https://fmmilmstqovaivpgpcah.supabase.co; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"
-    Cache-Control = "no-store"
