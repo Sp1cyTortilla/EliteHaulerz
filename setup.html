@@ -29,8 +29,8 @@
         <div class="field">
           <label for="password">Password</label>
           <input id="password" name="password" type="password"
-                 autocomplete="new-password" minlength="8">
-          <span class="hint">At least 8 characters.</span>
+                 autocomplete="new-password" minlength="6">
+          <span class="hint">At least 6 characters.</span>
         </div>
         <div class="field">
           <label for="confirm">Confirm password</label>
@@ -100,7 +100,7 @@
       if (needsUsername && !USERNAME_PATTERN.test(username)) {
         return showMessage(msg, 'Usernames are 3–24 characters: lowercase letters, numbers, or underscores.');
       }
-      if (password.length < 8) return showMessage(msg, 'Password must be at least 8 characters.');
+      if (password.length < 6) return showMessage(msg, 'Password must be at least 6 characters.');
       if (password !== form.confirm.value) return showMessage(msg, "Passwords don't match.");
 
       submitBtn.disabled = true;
